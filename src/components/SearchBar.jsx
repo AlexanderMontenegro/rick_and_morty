@@ -7,13 +7,16 @@ export default function SearchBar(props) {
    const [characterID, setCharacterID] = useState("");
 
    const handleSearch = () =>{
-      props.onSearch(characterID);
+      props.onSearch();
       setCharacterID("");
    };
 
    return (
       <div className={s.nav} >
-         <input  className={s.input} type='search' 
+         
+         <input  
+         className={s.input} 
+         type='search' 
          placeholder="Buscar personaje por ID"
          value={characterID}
          onChange={(e) => setCharacterID(e.target.value)}/>

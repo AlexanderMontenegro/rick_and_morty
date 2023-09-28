@@ -1,0 +1,15 @@
+.div{
+    margin: 5%;
+    display: flex;
+    text-align: end; 
+    align-items: end;
+    justify-content: end;
+    max-width: 90%; 
+    max-height: 10%;
+    border-radius: 20px; 
+    background: #0500003d;
+    box-shadow: 5px 5px 15px #08d15c, -5px -5px 15px #b60808;
+    padding: 0px; 
+    
+};
+
