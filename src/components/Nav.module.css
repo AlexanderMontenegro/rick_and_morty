@@ -1,9 +1,10 @@
 .div{
     margin: 5%;
     display: flex;
-    text-align: end; 
-    align-items: end;
-    justify-content: end;
+    text-align: center; 
+    align-items: center;
+    justify-content: space-around;
+    align-content: normal;
     max-width: 90%; 
     max-height: 10%;
     border-radius: 20px; 
@@ -11,5 +12,60 @@
     box-shadow: 5px 5px 15px #08d15c, -5px -5px 15px #b60808;
     padding: 0px; 
     
-};
+}
+
+.buttonR{
+        margin: 0;
+        width:180px; 
+        height: 180px;
+        border-radius: 80%; 
+        background: #0500003d;
+        box-shadow: 5px 5px 15px #08d15c, -5px -5px 15px #b60808;
+        padding: 0px; 
+        animation: giro 10s linear infinite; 
+    }
+
+.imgR{
+       margin: 0;
+        width: 180px; 
+        height: 180px;
+        border-radius: 80%; 
+        background: #0500003d;
+        box-shadow: 5px 5px 15px #08d15c, -5px -5px 15px #b60808;
+        padding: 0px; 
+        animation: giro 10s linear infinite; 
+}
+
+
+    @keyframes giro {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);  }
+    }
+    
+ 
+
+.buttonL{
+        margin: 0;
+        width: 200px; 
+        height: 200px;
+        border-radius: 80%; 
+        background: #0500003d;
+        box-shadow: 5px 5px 15px #08d15c, -5px -5px 15px #b60808;
+        padding: 0px; 
+        animation: giro 10s linear infinite; 
+    }
+
+.imgL{
+       margin: 0;
+        width: 200px; 
+        height: 200px;
+        border-radius: 80%; 
+        background: #0500003d;
+        box-shadow: 5px 5px 15px #08d15c, -5px -5px 15px #b60808;
+        padding: 0px; 
+        animation: giro 10s linear infinite; 
+}
 
