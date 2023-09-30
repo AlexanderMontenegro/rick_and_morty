@@ -1,12 +1,14 @@
 // App.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Cards from './components/Cards.jsx';
 import Nav from './components/Nav.jsx';
+import Detail from './components/Detail.jsx';
 import About from './components/About.jsx';
-import Detail from "./components/Detail.jsx"
-import axios from 'axios';
-import { Routes, Route }  from 'react-router-dom';
+import Error from './components/Error.jsx';
+import Form from './components/Form.jsx';
 
 function App() {
    const [characters, setCharacters] = useState([]);
@@ -63,6 +65,8 @@ function App() {
 
    return (
       <div className='App'>
+
+         
          <Nav onSearch={onSearch} addRandomCharacter= {addRandomCharacter} />
  
          <Routes>

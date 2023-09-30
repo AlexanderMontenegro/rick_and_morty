@@ -16,7 +16,7 @@ export default function Nav(props) {
          </button>
          </Link>
 
-         <NavLink to="/home" className={s.link} activeClassName={s.active}>
+         <NavLink to="/Home" className={s.link} activeClassName={s.active}>
           
             <button className={s.buttonL}>
             <img  className={s.imgR} src="img\portalHome.png" alt="Home" />

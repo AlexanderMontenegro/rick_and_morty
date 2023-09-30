@@ -7,12 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: grid;
   background-image: url(C:\Users\alexa\OneDrive\Escritorio\Developer\rick_and_morty\public\img\fondo.png);
-  background-size:cover;
-  background-repeat: no-repeat ; 
-  background-attachment: scroll; 
- background-position: center center;
- height: 100%;
-}
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  min-height: 100vh; }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

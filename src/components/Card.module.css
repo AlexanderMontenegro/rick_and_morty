@@ -5,7 +5,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 100%; 
+    max-width: 300px; 
+    max-height: 800px;
     border-radius: 20px; 
     background: #e0e0e0;
     box-shadow: 5px 5px 15px #08d15c, -5px -5px 15px #b60808;
