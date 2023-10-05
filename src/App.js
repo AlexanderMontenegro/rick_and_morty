@@ -1,7 +1,6 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import './App.css';
 import Cards from './components/Cards.jsx';
 import Nav from './components/Nav.jsx';
@@ -11,6 +10,31 @@ import Error from './components/Error.jsx';
 import Form from './components/Form.jsx';
 
 function App() {
+
+const [access, setAccess] = useState(false);
+   const EMAIL = 'alexandermontenegro@gmail.com';
+   const PASSWORD = 'Alemont';
+   const navigate = useNavigate();
+
+   const login = (userData) => {
+      if (userData.password === PASSWORD && userData.email === EMAIL) {
+         setAccess(true);
+         navigate('/home');
+      }
+   };
+
+
+     const logout = () => {
+      setAccess(false);
+      navigate('/');
+   };
+
+   useEffect(() => {
+      !access && navigate('/');
+   }, [access, navigate]);
+
+
+
    const [characters, setCharacters] = useState([]);
 
    function onClose(id) {
@@ -19,7 +43,9 @@ function App() {
       const updatedCharacters = characters.filter((character) => character.id !== characterId);
 
       setCharacters(updatedCharacters);
-   }
+   };
+
+   const location = useLocation();
 
    const onSearch = async (id) => {
       try {
@@ -65,15 +91,14 @@ function App() {
 
    return (
       <div className='App'>
-
-         
-         <Nav onSearch={onSearch} addRandomCharacter= {addRandomCharacter} />
+         {location.pathname !== "/" && <Nav onSearch={onSearch} addRandomCharacter= {addRandomCharacter} logout={logout} />}
  
          <Routes>
+            <Route path="*" element={<Error />} />
             <Route path="/Home" element={<Cards characters={characters} onClose={onClose} addRandomCharacter={addRandomCharacter} />} />
             <Route path="/About" element={<About />} />
-            <Route path="/detail/:id" element={<Detail />} />
-           
+            <Route path="/Detail/:id" element={<Detail />} />
+            <Route path='/' element={<Form login = {login} />} />
          </Routes>
       </div>
    );

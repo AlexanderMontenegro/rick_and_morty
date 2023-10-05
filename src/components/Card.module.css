@@ -112,3 +112,8 @@
     animation: giro 4s linear infinite; 
     }
     
+
+.link{
+    text-decoration: none; 
+    color: inherit;
+    }

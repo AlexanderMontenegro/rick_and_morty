@@ -18,7 +18,7 @@ const handleCloseClick =()=> {
         <img className={s.img2} src="img\portal.png" alt="Eliminar" />
       </button>
 
-      <Link to={`/detail/${id}`}>
+      <Link className={s.link}  to={`/Detail/${id}`}>
         <h3 className={s.name}>{name}</h3>
       </Link>
 
