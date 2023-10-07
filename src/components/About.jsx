@@ -25,11 +25,11 @@ export default function About() {
 
                 <br></br>
             
-               <ul>
-                <li><a href="https://mail.google.com/alexandermontenegro0691@gmail.com">Gmail</a></li>
-                <li><a href="https://web.whatsapp.com/1134252407">WhatsApp</a></li>
-                <li><a href="https://www.linkedin.com/in/alexander-montenegro/">LinkedIn</a></li>
-                <li><a href="https://github.com/AlexanderMontenegro">GitHub</a></li>
+               <ul  className={s.ul} >
+                <li   className={s.li}  ><a   className={s.a}   href="https://mail.google.com/alexandermontenegro0691@gmail.com">Gmail</a></li>
+                <li   className={s.li}  ><a   className={s.a}   href="https://wa.me/qr/2YALZUB6DIGPH1">WhatsApp</a></li>
+                <li   className={s.li}  ><a   className={s.a}   href="https://www.linkedin.com/in/alexander-montenegro/">LinkedIn</a></li>
+                <li   className={s.li}  ><a   className={s.a}   href="https://github.com/AlexanderMontenegro">GitHub</a></li>
                </ul>
 
 

@@ -26,6 +26,13 @@ export default function Nav(props) {
            </button>
          </Link>
 
+         <Link to="/favorites" className={s.link}>
+          <button className={s.buttonL}>
+            FAVORITES
+          </button>
+         </Link>
+
+
          <button  className= {s.buttonR} onClick={props.addRandomCharacter}>
             RANDOM
          </button>

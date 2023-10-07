@@ -1,6 +1,10 @@
-.div{
 
+.div{
   display: flex;
+  flex-direction: column 2;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 

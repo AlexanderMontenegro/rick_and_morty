@@ -5,57 +5,50 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 300px; 
+    max-width: 100%; 
     max-height: 800px;
-    border-radius: 20px; 
+    border-radius: 20px;
     background: #e0e0e0;
     box-shadow: 5px 5px 15px #08d15c, -5px -5px 15px #b60808;
-    padding: 20px; 
-    text-align: center; 
-
+    padding: 20px;
+    text-align: center;
 }
 
-.datos{
+@media (max-width: 600px) {
+    .card1 {
+        max-width: 90%;     }
+}
+
+.datos {
+    font-weight: bold;
     font-size: 18px;
     font-family: cursive;
     font-style: italic;
     transition: ease-in;
-
+    line-height: 0.01;
 }
 
 .datos:hover {
-    color: rgb(243, 3, 3); 
+    color: rgb(243, 3, 3);
 }
-
-
-
 
 @keyframes textoDegradado {
     0% {
-        color: rgba(255, 0, 0, 0.192);  }
-    25% {
-        color: rgba(255, 0, 0, 0.39);  }
-    50% {
-        color: rgba(255, 0, 0, 0.5);  }
-    75% {
-        color: rgba(255, 0, 0, 0.747); }
-
-    100% {
-        color: rgb(255, 0, 0); }
+        color: rgba(255, 0, 0, 0.192);
+    }
+   
 }
 
 .name {
     font-size: 36px;
     font-family: cursive;
     font-style: italic;
-    animation: textoDegradado 5s infinite;}
-
-
-
+    animation: textoDegradado 5s infinite;
+}
 
 .button {
-    width: 86px;
-    height: 58px;
+    width: 40px;
+    height: 40px;
     margin-top: 10px;
     border-radius: 50px;
     background: #050505;
@@ -65,55 +58,102 @@
     justify-content: center;
 }
 
-.button img {
-    width: 44px;
-    height: 44px;
-    border-radius: 50px;
-    background: #fdfcfc;
-    box-shadow: 20px 20px 60px #bebebe,
-  
-   
+.button:hover{
+    width: 1px;
+height: 1px;
 }
 
-.button img:hover {
-    width: 74px;
-    height: 74px;
-    border-radius: 50px;
-    box-shadow: 20px 20px 60px #bebebe;
-    box-shadow: 5px 5px 15px #08d15c, -5px -5px 15px #08d15c;
-   
-  
-   
+@media (max-width: 600px) {
+    .button {
+        width: 10px; 
+         height: 10px;
+    }
+
+    .button img {
+        width: 10px; 
+        height: 10px;
+    }
+
+    .button img:hover {
+        width: 10px; 
+        height: 10px;
+    }
 }
 
-.img{
+.img {
     margin: 10px;
-    width:auto;
+    width: auto;
     height: auto;
     border-radius: 20px;
     background: #050505;
-    box-shadow: 20px 20px 60px #bebebe,
-
-   
-   
+    box-shadow: 20px 20px 60px #bebebe;
 }
 
+@media (max-width: 600px) {
+    .img {
+        margin: 5px; 
+        }
+}
 
 @keyframes giro {
     0% {
-        transform: rotate(0deg); /* Rotación inicial: 0 grados */
+        transform: rotate(0deg);
     }
     100% {
-        transform: rotate(360deg); /* Rotación final: 360 grados (giro completo) */
+        transform: rotate(360deg);
     }
 }
 
 .img2 {
-    animation: giro 4s linear infinite; 
-    }
-    
+    width: 45px;
+    animation: giro 4s linear infinite;
+}
 
-.link{
-    text-decoration: none; 
+.img2:hover{
+    width: 150px;
+
+}
+
+.link {
+    text-decoration: none;
     color: inherit;
-    }
+}
+
+.buttonF{
+    display: flex;
+    position: relative;
+    left: 150px;
+    border-radius: 50px;
+    background: #050505;
+    box-shadow: 20px 20px 60px #bebebe;
+   
+
+    
+}
+
+
+
+.buttonF:hover {
+    
+    animation: giro 4s linear infinite;
+}
+
+
+.buttonF2{
+    display: flex;
+    position: relative;
+    right: 150px;
+    border-radius: 50px;
+    background: #050505;
+    box-shadow: 20px 20px 60px #bebebe;
+   
+
+    
+}
+
+
+
+.buttonF2:hover {
+    
+    animation: giro 4s linear infinite;
+}
