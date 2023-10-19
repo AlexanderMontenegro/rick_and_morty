@@ -1,0 +1,74 @@
+.div {
+    margin: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    align-content: normal;
+    max-width: 90hw;
+    max-height: 90hv;
+    border-radius: 20px;
+    background: #0500003d;
+    box-shadow: 5px 5px 15px #08d15c, -5px -5px 15px #b60808;
+    padding: 0px;
+    
+  }
+
+  
+  .buttonR,
+  .buttonL,
+  .buttonT {
+    padding: 0.5em 1.2em;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #17c3b2;
+    margin: 10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    align-content: normal;
+
+  }
+  
+  .buttonR::before,
+  .buttonL::before,
+  .buttonT::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #17c3b2;
+    transition: 0.5s ease;
+    display: block;
+    z-index: -1;
+  }
+  
+  .buttonR:hover::before,
+  .buttonL:hover::before,
+  .buttonT:hover::before {
+    width: 105%;
+  }
+  
+  .buttonR:hover,
+  .buttonL:hover,
+  .buttonT:hover {
+    color: #111;
+  }
+  
+.link{
+  text-decoration: none;
+}

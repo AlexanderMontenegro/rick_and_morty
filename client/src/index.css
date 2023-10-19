@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: grid;
-  background-image: url(C:\Users\alexa\OneDrive\Escritorio\Developer\rick_and_morty\public\img\fondo.png);
+  background-image: url("/public/img/fondo.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;

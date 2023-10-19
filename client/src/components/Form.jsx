@@ -27,19 +27,19 @@ function Form({login}) {
     
     const handleSubmit = (e) => {
       e.preventDefault();
-      login(userData)
       const emailError = validateEmail(userData.email);
       const passwordError = validatePassword(userData.password);
-
+    
       if (!emailError && !passwordError) {
-         login(userData);
+        login(userData);
       } else {
-         setErrors({
-            email: emailError,
-            password: passwordError,
-         });
+        setErrors({
+          email: emailError,
+          password: passwordError,
+        });
       }
-   };
+    };
+    
 
    return (
       <div   className={s.div}  >

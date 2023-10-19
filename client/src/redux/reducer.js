@@ -24,25 +24,28 @@ const rootReducer = (state = initialState, action) => {
 
       };
 
-    case FILTER: 
-      return{
-        ...state,
-        myFavorites: state.allCharacters.filter((character) => character.gender === action.payload)
-      }
+      case FILTER:
+        return {
+          ...state,
+          myFavorites: state.allCharacters.filter((character) =>
+            character.gender.toLowerCase() === action.payload.toLowerCase()
+          ),
+        };
 
-    case ORDER:
-      console.log(action.payload);
-      if (action.payload === "A"){
-        return {
-          ...state,
-          myFavorites: state.allCharacters.sort((a, b) => a.name > b.name ? 1 : -1)
-        }
-      } else{
-        return {
-          ...state,
-          myFavorites: state.allCharacters.sort((a, b) => b.name > a.name ? 1 : -1)
-        }
-      }
+        case ORDER:
+          const sortedCharacters = [...state.allCharacters].sort((a, b) => {
+            if (action.payload === "A") {
+              return a.name.localeCompare(b.name);
+            } else {
+              return b.name.localeCompare(a.name);
+            }
+          });
+        
+          return {
+            ...state,
+            myFavorites: sortedCharacters,
+          };
+        
     default:
       return state;
   }

@@ -33,6 +33,7 @@ function App() {
   
      } catch (error) {
      console.log('error en api ', error);
+     window.alert("Hubo un error al buscar el personaje.");
      }
    };
 
@@ -108,10 +109,10 @@ function App() {
 
 <Routes>
         <Route path="/" element={<Form login={login} />} />
-        <Route path="/Home" element={<Cards characters={characters} onClose={onClose} />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Detail/:id" element={<Detail />} />
-        <Route path="/Favorites" element={<Favorites />} />
+        <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<Error />} />
        
 

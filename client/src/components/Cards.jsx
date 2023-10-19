@@ -9,7 +9,7 @@ export default function Cards(props) {
    return (
    <div className={s.div} >
       {characters.map((character) => (
-         <Card
+         <Card className={s.card}
           key={character.id}
           name={character.name}
           status={character.status}
