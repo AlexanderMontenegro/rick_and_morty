@@ -11,7 +11,6 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
    
-        allCharacters: state.allCharacters.concat(action.payload),
         myFavorites: state.myFavorites.concat(action.payload),
       };
 
@@ -19,7 +18,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
 
-        myFavorites: state.myFavorites.filter((fav) => fav.id !== Number(action.id)),
+        myFavorites: state.myFavorites.filter((fav) => fav.id !== action.id),
 
 
       };

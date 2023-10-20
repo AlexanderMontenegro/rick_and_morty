@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect } from "react";
 import { Link} from "react-router-dom";
 import { connect } from "react-redux";
 import { addFav, removeFav } from "../redux/actions";
@@ -27,41 +27,46 @@ function Card(props) {
     onClose(characterId);
     dispatch(removeFav(id));
   };
+
+
+
+  
   useEffect(() => {
     myFavorites.forEach((fav) => {
-      if (fav.id === props.id) {
+      if (fav.id === id) {
         setIsFav(true);
       }
     });
-  }, [myFavorites, props.id]);
+  }, [myFavorites, id]);
+
 
   return (
-    <div className={s.card1}>
- 
-
-
+     <div className={s.card1}>
       <button className={s.button} onClick={handleCloseClick}>
         <img className={s.img2} src="img\portal.png" alt="Eliminar" />
       </button>
-      
+
       <Link to={`/detail/${id}`} className={s.link}>
         <h3 className={s.name}>{name}</h3>
       </Link>
 
       {isFav ? (
-        <button  className={s.buttonF} onClick={handleFavorite}>❤️</button>
-        ) : (
-          <button  className={s.buttonF2} onClick={handleFavorite}>🤍</button>
-          )}
+        <button className={s.buttonF} onClick={handleFavorite}>
+          ❤️
+        </button>
+      ) : (
+        <button className={s.buttonF2} onClick={handleFavorite}>
+          🤍
+        </button>
+      )}
 
-      <h2 className={s.datos}> Status: {status} </h2>
-      <h2 className={s.datos}> Species: {species} </h2>
-      <h2 className={s.datos}> Gender: {gender} </h2>
-      <h2 className={s.datos}> Origin: {origin} </h2>
-      <img className={s.img} src={image} alt="imagen" />
-
-        
-
+      <div className={s.ddatos}>
+        <h2 className={s.datos}> Status: {status} </h2>
+        <h2 className={s.datos}> Species: {species} </h2>
+        <h2 className={s.datos}> Gender: {gender} </h2>
+        <h2 className={s.datos}> Origin: {origin} </h2>
+        <img className={s.img} src={image} alt="imagen" />
+      </div>
     </div>
   );
 }

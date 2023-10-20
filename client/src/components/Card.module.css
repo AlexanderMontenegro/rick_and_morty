@@ -1,59 +1,57 @@
-
 .card1 {
+    
     margin: 10px;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    max-width: 20%;
-    min-width: 200px; 
-    max-height: 30%;
-    min-height: 300px;
+    max-width: 10%;
+    min-width: 150px;
+    max-height: 20%;
+    min-height: 100px;
     border-radius: 20px;
-    background: #e0e0e0;
     box-shadow: 5px 5px 15px #08d15c, -5px -5px 15px #b60808;
     padding: 0;
     text-align: center;
-   
+    align-content: flex-end;
+    justify-content: space-around;
+    animation: holograma 10s infinite;
 }
 
-@media (max-width: 600px) {
-    .card1 {
-        max-width: 90%;     }
+.img {
+    margin: 10px;
+    width: 90%; 
+    height: auto;
+    border-radius: 20px;
+    background: #050505;
+    box-shadow: 20px 20px 60px #bebebe;
 }
 
 .datos {
-    font-weight: bold;
-    font-size: 18px;
-    font-family: cursive;
-    font-style: italic;
-    transition: ease-in;
-  
+    font-family: "Futurama Bold";
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #0aff02;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.959);
 }
 
 .datos:hover {
     color: rgb(243, 3, 3);
 }
 
-@keyframes textoDegradado {
-    0% {
-        color: rgba(255, 0, 0, 0.192);
-    }
-   
-}
-
 .name {
-    font-size: 22px;
+    font-size: 18px;
     font-family: cursive;
     font-style: italic;
-    animation: textoDegradado 5s infinite;
+    text-transform: uppercase;
+    animation: coloresmix  5s linear infinite;
+    
 }
 
-.button {
-    width: 40px;
-    height: 40px;
-    margin-top: 10px;
+.button{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
     border-radius: 50px;
     background: #050505;
     box-shadow: 20px 20px 60px #bebebe;
@@ -62,51 +60,28 @@
     justify-content: center;
 }
 
-.button:hover{
-    width: 1px;
-height: 1px;
-}
 
-@media (max-width: 600px) {
-    .button {
-        width: 10px; 
-         height: 10px;
-    }
-
-    .button img {
-        width: 10px; 
-        height: 10px;
-    }
-
-    .button img:hover {
-        width: 10px; 
-        height: 10px;
-    }
-}
-
-.img {
-    margin: 10px;
-    width: 70%;
-    height: auto;
-    border-radius: 20px;
+.img:hover {
+    position: relative;
+    border-radius: 80px;
     background: #050505;
     box-shadow: 20px 20px 60px #bebebe;
-
-
-
+    animation: giro2 4s linear infinite;
 }
 
-
-.img:hover
-{
-position: relative;
-
-animation: giro 4s linear infinite;
+.img2 {
+    width: 45px;
+    animation: giro 4s linear infinite;
 }
 
+.img2:hover {
+    width: 150px;
+}
 
-
-
+.link {
+    text-decoration: none;
+    color: inherit;
+}
 
 
 @keyframes giro {
@@ -118,58 +93,70 @@ animation: giro 4s linear infinite;
     }
 }
 
-.img2 {
-    width: 45px;
-    animation: giro 4s linear infinite;
+
+@keyframes giro2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
-.img2:hover{
-    width: 150px;
+
+
+
+@keyframes holograma {
+
+    0% {
+        background: linear-gradient(45deg, #808080, #c0c0c0, #808080, #c0c0c0);
+    }
+    25% {
+        background: linear-gradient(45deg, #c0c0c0, #808080, #c0c0c0, #808080);
+    }
+    50% {
+        background: linear-gradient(45deg, #808080, #c0c0c0, #808080, #c0c0c0);
+    }
+    75% {
+        background: linear-gradient(45deg, #c0c0c0, #808080, #c0c0c0, #808080);
+    }
+    100% {
+        background: linear-gradient(45deg, #808080, #c0c0c0, #808080, #c0c0c0);
+    }
 
 }
+  
+@keyframes holograma2 {
 
-.link {
-    text-decoration: none;
-    color: inherit;
-}
-
-.buttonF{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    border-radius: 50px;
-    background: #050505;
-    box-shadow: 20px 20px 60px #bebebe;
-   
+    0% {
+        background: linear-gradient(45deg, #f06, #9f6);
+      }
+      25% {
+        background: linear-gradient(45deg, #9f6, #6f9);
+      }
+      50% {
+        background: linear-gradient(45deg, #6f9, #f09);
+      }
+      75% {
+        background: linear-gradient(45deg, #f09, #f06);
+      }
+      100% {
+        background: linear-gradient(45deg, #f06, #9f6);
+      }
 
     
 }
 
 
 
-.buttonF:hover {
-    
-    animation: giro 4s linear infinite;
-}
-
-
-.buttonF2{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    border-radius: 50px;
-    background: #050505;
-    box-shadow: 20px 20px 60px #bebebe;
-   
+@keyframes coloresmix{
 
     
-}
+    0% { color: red; }
+    25% { color: blue; }
+    50% { color: green; }
+    75% { color: rgb(255, 255, 255); }
+    100% { color: rgb(7, 7, 7); }
 
-
-
-.buttonF2:hover {
-    
-    animation: giro 4s linear infinite;
-}
-
-
+ 
+  }
