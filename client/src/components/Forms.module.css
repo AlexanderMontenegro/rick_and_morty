@@ -40,7 +40,7 @@
 
 .label1,
 .label2 {
-  display: grid;
+   display: grid;
   align-items: stretch;
   justify-content: space-around;
   color: #fff;
