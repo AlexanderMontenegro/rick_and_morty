@@ -39,27 +39,26 @@ function Favorites() {
       </div>
       <div>
         {myFavorites.length > 0 ? (
-          myFavorites.map(
-            ({key, id, name, status, species, gender, origin, image }) => (
-              <Card
-                key={id}
-                id={id}
-                name={name}
-                status={status}
-                species={species}
-                gender={gender}
-                origin={origin.name}
-                image={image}
-                onClose={() => dispatch(removeFav(id))}
-              />
-            )
-          )
+          myFavorites.map(({ key, id, name, status, species, gender, origin, image }) => (
+            <Card
+              key={id}
+              id={id}
+              name={name}
+              status={status}
+              species={species}
+              gender={gender}
+              origin={origin.name}
+              image={image}
+              onClose={() => dispatch(removeFav(id))}
+            />
+          ))
         ) : (
-          <p>No tienes personajes favoritos.</p>
+          <p className={s.p}>No tienes personajes favoritos.</p>
         )}
       </div>
     </div>
   );
+
 }
 
 const mapStateToProps = (state) => {

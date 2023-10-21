@@ -40,20 +40,26 @@
 
 .label1,
 .label2 {
+  display: grid;
+  align-items: stretch;
+  justify-content: space-around;
   color: #fff;
   font-size: 24px;
-  margin-bottom: 10px;
+  max-width: 100%;
+  margin: 10px;
 }
 
 input[type="email"],
 input[type="password"] {
-  width: 100%;
+  max-width: 95%;
   padding: 10px;
   margin-bottom: 20px;
   border: none;
   border-radius: 5px;
   background-color: #2e2e2e;
   color: #fff;
+  font-size: 24px;
+  text-align: center;
 }
 
 .error {

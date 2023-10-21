@@ -1,10 +1,10 @@
 import { ADD_FAV, FILTER, ORDER, REMOVE_FAV } from './actions-types';
 
+
 const initialState = {
   myFavorites: [],
   allCharacters: [],
 };
-
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_FAV:
@@ -12,6 +12,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
    
         myFavorites: state.myFavorites.concat(action.payload),
+        allCharacters: state.allCharacters.concat(action.payload),
       };
 
     case REMOVE_FAV:
@@ -19,6 +20,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
 
         myFavorites: state.myFavorites.filter((fav) => fav.id !== action.id),
+        allCharacters: state.allCharacters, 
 
 
       };
