@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "\"Servidor R_A_M\"",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.jsx"
+  },
+  "author": "Alexander Montenegro",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexanderMontenegro"
+  },
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
