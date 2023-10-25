@@ -9,6 +9,15 @@
 
 }
 
+.div2{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
+    align-items: stretch;
+}
+
 
   .selec{
     margin: 30px;

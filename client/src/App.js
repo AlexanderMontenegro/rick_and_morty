@@ -13,12 +13,14 @@ import Favorites from "./components/Favorites.jsx"
 function App() {
   const [characters, setCharacters] = useState([]);
 
+
   const {pathname} = useLocation();
 
   const onSearch = async (id) => {
     try {
       const response = await axios(
-        `https://rickandmortyapi.com/api/character/${id}`);
+        `https://rickandmortyapi.com/api/character/${id}`
+      );
       const data = response.data;
   
  

@@ -37,17 +37,18 @@ function Favorites() {
           <option value="unknown">unknown</option>
         </select>
       </div>
-      <div>
+      <div  className={s.div2}  >
         {myFavorites.length > 0 ? (
           myFavorites.map(({ key, id, name, status, species, gender, origin, image }) => (
             <Card
+              
               key={id}
               id={id}
               name={name}
               status={status}
-              species={species}
+              species={species.name}
               gender={gender}
-              origin={origin.name}
+              origin={origin}
               image={image}
               onClose={() => dispatch(removeFav(id))}
             />
