@@ -12,7 +12,8 @@ const Detail = () => {
 
   useEffect(() => {
     if (id){
-    axios(`https://rickandmortyapi.com/api/character/${id}`)
+    axios(
+      /*`https://rickandmortyapi.com/api/character/${id}`*/"http://localhost:3001/rickandmorty/character/${id}")
       .then((response) => {
         const data = response.data;
         if (data.name) {

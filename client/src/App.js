@@ -19,7 +19,7 @@ function App() {
   const onSearch = async (id) => {
     try {
       const response = await axios(
-        `https://rickandmortyapi.com/api/character/${id}`
+        /*`https://rickandmortyapi.com/api/character/${id}`*/"http://localhost:3001/rickandmorty/character/${id}"
       );
       const data = response.data;
   

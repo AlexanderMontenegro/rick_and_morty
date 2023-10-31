@@ -1,3 +1,5 @@
+
+
 import React, { useState } from "react";
 import {  useDispatch } from "react-redux";
 import { connect } from "react-redux";
@@ -27,7 +29,7 @@ function Favorites({ myFavorites }) {
         </select>
 
         <select className={s.selec} onChange={handleFilter}>
-          <option value="Todos">Todos</option>
+          <option value="Both">Todos</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
         </select>
