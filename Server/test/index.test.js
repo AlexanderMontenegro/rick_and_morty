@@ -1,5 +1,7 @@
 const app = require('../src/App');
 const request = require('supertest');
+const agent = session(app);
+
 
 describe('GET /rickandmorty/character/:id', () => {
   it('should respond with status 200', async () => {
