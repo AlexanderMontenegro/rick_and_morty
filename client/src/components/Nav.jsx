@@ -14,7 +14,7 @@ export default function Nav(props) {
          
          <SearchBar onSearch={props.onSearch} />
 
-         <Link to="/About" className={s.link}>
+         <Link to="/about" className={s.link}>
          <button className={s.buttonL}>
             ABOUT
         </button>

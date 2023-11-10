@@ -59,7 +59,7 @@ function Favorites({ myFavorites }) {
 
 const mapStateToProps = (state) => {
   return {
-    myFavorites: state.myFavorites,
+    myFavorites: state.myFavorites.allCharacters ,
   };
 };
 
