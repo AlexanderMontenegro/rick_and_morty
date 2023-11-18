@@ -1,5 +1,5 @@
 
-mode_modules
-pnp
-pnp.js
+/mode_modules
+/.pnp
+.pnp.js
 .env
