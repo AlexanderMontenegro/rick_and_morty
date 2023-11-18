@@ -1,16 +1,18 @@
 
-const http = require('http');
 const express = require('express');
 const app = express();
+const { getData } = require('./utils/data');
 const PORT = 3001;
-const getCharById= require("./controllers/getCharById")
+const router = require("./routes/index")
 
-const server = http.createServer((req, res) => {
-   if (req.url.includes('/rickandmorty/character')) {
-   }
+const cors = require('cors')
+const bodyParser = require('body-parser')
 
-   app.get('/rickandmorty/character/:id', getCharById);
- });
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json()); 
+app.use(cors())
+app.use('/',router)
+
 
 app.listen(PORT, () => {
    console.log('Server is running on port ' + PORT);

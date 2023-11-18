@@ -1,13 +1,23 @@
-const users = require('../utils/users');
 
-function login(req, res) {
-  const { email, password } = req.query;
-  const user = users.find((u) => u.email === email && u.password === password);
-  if (user) {
-    res.status(200).json({ access: true });
+
+
+
+const login = (req, res) => {
+  const access = {
+    email: "alexandermontenegro@gmail.com",
+    password: "Alemont",
+    isLoged: true,
+  };
+  const { email, password } = req.body;
+  if (email === access.email && password === access.password) {
+    access.isLoged = true;
+    res.status(200).json({ isLoged: true });
   } else {
-    res.status(200).json({ access: false });
+    res.status(200).json({ isLoged: false });
   }
 }
 
-module.exports = login;
+
+
+
+module.exports = {login};

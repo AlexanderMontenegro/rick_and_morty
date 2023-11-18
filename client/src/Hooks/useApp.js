@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useAccess } from "./useAccess";
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 
 const access={  
@@ -10,13 +11,17 @@ const access={
 
 const useApp = () => {
   const { pathname } = useLocation();
-  const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
+  const navigate = useNavigate();
+  const access = useAccess();
+
+  useEffect(() => {
+   !access.isLoged && navigate('/');
+  }, [access.isLoged, navigate]);
 
   const onSearch = async (id) => {
 
     const find = characters.find((character) => character.id === +id);
-    console.log('find ', find);
     if (find) return window.alert("¡Este personaje ya fue agregado!");
 
   
@@ -49,14 +54,17 @@ const useApp = () => {
     onSearch(randomId);
   };
 
-  const login = (data) => {
-    console.log('login', data);
-
-    if (data.email === access.email && data.password === access.password) {
-      access.isLoged = true;
-      navigate('/home');
+  const login = (userData) => {
+    if (
+      userData.password === access.password &&
+      userData.email === access.email
+    ) {
+      access.isLoggedIn = true; 
+      setIsLoggedIn(true);
+      setUser(userData.email);
+      navigate("/home");
     } else {
-      window.alert('Usuario o contraseña incorrectos');
+      window.alert("Usuario o contraseña incorrectos");
     }
   }
 
@@ -67,7 +75,7 @@ const useApp = () => {
 
   useEffect(() => {
     !access.isLoged && navigate('/');
-  }, [access, navigate]);
+  }, [access.isLoged, navigate]);
 
 
   return {

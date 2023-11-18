@@ -12,7 +12,7 @@ const Detail = () => {
 
   useEffect(() => {
     if (id){
-    axios("http://localhost:3001/rickandmorty/character/${id}")
+    axios("http://localhost:3001/rickandmorty/character/:id")
       .then((response) => {
         const data = response.data;
         if (data.name) {

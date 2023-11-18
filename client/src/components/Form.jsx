@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { validateEmail, validatePassword } from "./Validacion.jsx";
 import s from "./Forms.module.css";
+import { useAccess } from "./../Hooks/useAccess.jsx";
 
-function Form({ login }) {
+function Form() {
+
+  const {login}= useAccess();
+
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -46,6 +50,8 @@ function Form({ login }) {
             name="email"
             value={userData.email}
             onChange={handleChange}
+            autoComplete="username"
+
           />
         </label>
         {errors.email && <p className="error">{errors.email}</p>}
@@ -56,6 +62,7 @@ function Form({ login }) {
             name="password"
             value={userData.password}
             onChange={handleChange}
+            autoComplete="current-password"
           />
         </label>
         {errors.password && <p className="error">{errors.password}</p>}

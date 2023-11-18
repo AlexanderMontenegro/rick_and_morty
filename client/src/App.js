@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import axios from "axios";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import "./App.css";
@@ -8,70 +8,51 @@ import Detail from "./components/Detail.jsx";
 import About from "./components/About.jsx";
 import Error from "./components/Error.jsx";
 import Form from "./components/Form.jsx";
-import Favorites from "./components/Favorites.jsx"
+import Favorites from "./components/Favorites.jsx";
+import { useAccess } from "./Hooks/useAccess.jsx";
 
 function App() {
   const [characters, setCharacters] = useState([]);
 
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   const onSearch = async (id) => {
     try {
       const response = await axios(
-     "http://localhost:3001/rickandmorty/character/${id}"
+        "http://localhost:3001/rickandmorty/character/:id"
       );
       const data = response.data;
-  
- 
+
       if (data.name) {
         setCharacters([...characters, data]);
-      
-     } else {
+      } else {
         window.alert("¡No hay personajes con este ID!");
-     }
-  
-     } catch (error) {
-     console.log('error en api ', error);
-     window.alert("Hubo un error al buscar el personaje.");
-     }
-   };
-
-   const onClose = (id) => {
-     
-      setCharacters(characters.filter((character) => character.id !== id));
-     }
-
-
-
-  const access={  
-   email: "alexandermontenegro@gmail.com",
-   password : "Alemont",
-   isLoged: false
-   };
-
-  const navigate = useNavigate();
-
-  const login = (userData) => {
-    if (userData.password === access.password && userData.email === access.email) {
-      access.isLoged=true;
-      navigate("/home");
-    } else {
-      window.alert("Usuario o contraseña incorrectos");
+      }
+    } catch (error) {
+      console.log("error en api ", error.response ? error.response.data : error.message);
+      window.alert("Hubo un error al buscar el personaje.");
     }
   };
 
+  const onClose = (id) => {
+    setCharacters(characters.filter((character) => character.id !== id));
+  };
+
+ 
+
+  const navigate = useNavigate();
+
+  const access = useAccess();
+
+
   const logout = () => {
-    access.isLoged=false;
+    access.isLoged = false;
     navigate("/");
   };
 
-  useEffect(() => {
-    !access && navigate("/");
-  }, [access, navigate]);
 
 
   const location = useLocation();
-
 
   const addRandomCharacter = async () => {
     const randomId = Math.floor(Math.random() * 826) + 1;
@@ -98,23 +79,24 @@ function App() {
 
   return (
     <div className="App">
-      {pathname !== "/" && 
+      {pathname !== "/" && (
         <Nav
           onSearch={onSearch}
           logout={logout}
           addRandomCharacter={addRandomCharacter}
         />
-      }
+      )}
 
-<Routes>
-        <Route path="/" element={<Form login={login} />} />
-        <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+      <Routes>
+        <Route path="/" element={<Form/>} />
+        <Route
+          path="/home"
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<Error />} />
-       
-
       </Routes>
     </div>
   );

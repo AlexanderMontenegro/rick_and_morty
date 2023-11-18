@@ -34,7 +34,7 @@ const rootReducer = (state = initialState, action) => {
         };
 
         case ORDER:
-          const sortedCharacters = [...state.allCharacters].sort((a, b) => {
+          const sortedCharacters = [...state.myFavorites].sort((a, b) => {
             if (action.payload === "A") {
               return a.name.localeCompare(b.name);
             } else {
