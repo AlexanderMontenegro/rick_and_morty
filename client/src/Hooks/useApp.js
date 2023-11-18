@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useAccess } from "./useAccess";
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const access={  
     email: "alexandermontenegro@gmail.com",
@@ -73,9 +73,7 @@ const useApp = () => {
     navigate('/');
   }
 
-  useEffect(() => {
-    !access.isLoged && navigate('/');
-  }, [access.isLoged, navigate]);
+ 
 
 
   return {

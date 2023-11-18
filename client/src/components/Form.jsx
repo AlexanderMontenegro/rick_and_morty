@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { validateEmail, validatePassword } from "./Validacion.jsx";
 import s from "./Forms.module.css";
-import { useAccess } from "./../Hooks/useAccess.jsx";
+import { useAccess } from "./../Hooks/useAccess.js";
 
 function Form() {
 

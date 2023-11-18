@@ -1,12 +1,13 @@
 
 const express = require('express');
 const app = express();
-const { getData } = require('./utils/data');
 const PORT = 3001;
 const router = require("./routes/index")
 
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const { conn } = require('./DB_connection');
+
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json()); 

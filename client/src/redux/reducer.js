@@ -1,5 +1,4 @@
-import { ADD_FAV, REMOVE_FAV , FILTER, ORDER} from './actions-types';
-
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions-types";
 
 const initialState = {
   myFavorites: [],
@@ -10,7 +9,7 @@ const rootReducer = (state = initialState, action) => {
     case ADD_FAV:
       return {
         ...state,
-   
+
         myFavorites: state.myFavorites.concat(action.payload),
         allCharacters: state.allCharacters.concat(action.payload),
       };
@@ -20,36 +19,36 @@ const rootReducer = (state = initialState, action) => {
         ...state,
 
         myFavorites: state.myFavorites.filter((fav) => fav.id !== action.id),
-        allCharacters: state.allCharacters, 
-
-
+        allCharacters: state.allCharacters,
       };
 
-      case FILTER:
-        return {
-          ...state,
-          myFavorites: state.allCharacters.filter((character) =>
-            character.gender.toLowerCase() === action.payload.toLowerCase()
-          ),
-        };
+    case FILTER:
+      const filteredFavorites = state.allCharacters.filter(
+        (character) =>
+          character.gender.toLowerCase() === action.payload.toLowerCase()
+      );
+      return {
+        ...state,
+        myFavorites: filteredFavorites,
+      };
 
-        case ORDER:
-          const sortedCharacters = [...state.myFavorites].sort((a, b) => {
-            if (action.payload === "A") {
-              return a.name.localeCompare(b.name);
-            } else {
-              return b.name.localeCompare(a.name);
-            }
-          });
-        
-          return {
-            ...state,
-            myFavorites: sortedCharacters,
-          };
-        
+    case ORDER:
+      const sortedCharacters = [...state.myFavorites].sort((a, b) => {
+        if (action.payload === "A") {
+          return a.name.localeCompare(b.name);
+        } else {
+          return b.name.localeCompare(a.name);
+        }
+      });
+
+      return {
+        ...state,
+        myFavorites: sortedCharacters,
+      };
+
     default:
       return state;
   }
-}
+};
 
 export default rootReducer;

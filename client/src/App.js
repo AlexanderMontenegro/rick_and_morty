@@ -1,7 +1,6 @@
-import React, { useState} from "react";
-import axios from "axios";
+import React, { useReducer} from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import "./App.css";
+import { useAccess } from "./Hooks/useAccess.js";
 import Cards from "./components/Cards.jsx";
 import Nav from "./components/Nav.jsx";
 import Detail from "./components/Detail.jsx";
@@ -9,10 +8,11 @@ import About from "./components/About.jsx";
 import Error from "./components/Error.jsx";
 import Form from "./components/Form.jsx";
 import Favorites from "./components/Favorites.jsx";
-import { useAccess } from "./Hooks/useAccess.jsx";
+import "./App.css";
+import axios from "axios";
 
 function App() {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useReducer([]);
 
   const { pathname } = useLocation();
 
@@ -46,13 +46,12 @@ function App() {
 
 
   const logout = () => {
-    access.isLoged = false;
+    access.isLogged = false;
     navigate("/");
   };
 
 
 
-  const location = useLocation();
 
   const addRandomCharacter = async () => {
     const randomId = Math.floor(Math.random() * 826) + 1;
